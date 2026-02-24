@@ -1,0 +1,51 @@
+Dec 08 19:02:00.651 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Dec 08 19:02:00.651 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59077.
+Dec 08 19:02:00.655 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 08 19:02:00.655 HYPERVISOR: exec_cmd: hypervisor working_dir /home/shadrict/GNS3/projects/project3/project-files/dynamips 
+Dec 08 19:02:00.655 GENERAL: working_dir=/home/shadrict/GNS3/projects/project3/project-files/dynamips
+Dec 08 19:02:00.656 HYPERVISOR: exec_cmd: hypervisor working_dir /home/shadrict/GNS3/projects/project3/project-files/dynamips/5c26936a-f8e5-4dde-b1cc-c93ff7366d98 
+Dec 08 19:02:00.656 GENERAL: working_dir=/home/shadrict/GNS3/projects/project3/project-files/dynamips/5c26936a-f8e5-4dde-b1cc-c93ff7366d98
+Dec 08 19:02:00.656 HYPERVISOR: exec_cmd: vm create R2 2 c3745 
+Dec 08 19:02:00.657 VM: VM R2 created.
+Dec 08 19:02:00.658 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5001 
+Dec 08 19:02:00.658 HYPERVISOR: exec_cmd: c3745 get_mac_addr R2 
+Dec 08 19:02:00.659 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Dec 08 19:02:00.659 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 08 19:02:00.659 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x60aa72bc 
+Dec 08 19:02:00.660 HYPERVISOR: exec_cmd: vm set_ios R2 /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 08 19:02:00.660 HYPERVISOR: exec_cmd: c3745 set_mac_addr R2 c402.0e08.0000 
+Dec 08 19:02:00.661 HYPERVISOR: exec_cmd: vm set_nvram R2 256 
+Dec 08 19:02:00.661 HYPERVISOR: exec_cmd: vm set_ram R2 256 
+Dec 08 19:02:00.661 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 08 19:02:00.662 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 NM-1FE-TX 
+Dec 08 19:02:00.662 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 08 19:02:00.662 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 NM-4T 
+Dec 08 19:02:00.662 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 08 19:02:00.662 HYPERVISOR: exec_cmd: vm slot_add_binding R2 3 0 NM-16ESW 
+Dec 08 19:02:00.663 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 08 19:02:00.663 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 16 WIC-1T 
+Dec 08 19:02:00.663 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 08 19:02:00.663 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 32 WIC-2T 
+Dec 08 19:02:00.950 HYPERVISOR: exec_cmd: nio create_udp udp-a77584a2-f3e9-4623-b24a-83b33841754e 10004 127.0.0.1 10005 
+Dec 08 19:02:01.162 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-a77584a2-f3e9-4623-b24a-83b33841754e 
+Dec 08 19:02:01.162 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 08 19:17:44.826 HYPERVISOR: exec_cmd: vm create Ghost 0 c3745 
+Dec 08 19:17:44.826 VM: VM Ghost created.
+Dec 08 19:17:44.827 HYPERVISOR: exec_cmd: vm set_ios Ghost /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 08 19:17:44.828 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Dec 08 19:17:44.829 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost /home/shadrict/GNS3/projects/project3/project-files/dynamips/c3745-adventerprisek9-mz.124-25.image-256.ghost 
+Dec 08 19:17:44.829 HYPERVISOR: exec_cmd: vm set_ram Ghost 256 
+Dec 08 19:17:44.830 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 08 19:17:44.832 HYPERVISOR: exec_cmd: vm set_config Ghost configs/i0_startup-config.cfg 
+Dec 08 19:17:44.832 HYPERVISOR: exec_cmd: vm start Ghost 
+Dec 08 19:17:45.746 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 08 19:17:45.747 HYPERVISOR: exec_cmd: vm stop Ghost 
+Dec 08 19:17:45.851 VM: VM Ghost shutdown.
+Dec 08 19:17:45.852 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Dec 08 19:17:45.853 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Dec 08 19:17:45.853 VM: VM Ghost destroyed.
+Dec 08 19:17:45.855 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Dec 08 19:17:45.856 HYPERVISOR: exec_cmd: vm set_ghost_file R2 /home/shadrict/GNS3/projects/project3/project-files/dynamips/c3745-adventerprisek9-mz.124-25.image-256.ghost 
+Dec 08 19:17:45.857 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 08 19:17:45.858 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg 
+Dec 08 19:17:45.859 HYPERVISOR: exec_cmd: vm start R2 

@@ -1,0 +1,29 @@
+Вопрос: Какие тип и класс запроса видны в DNS-запросе?
+
+Ответ: 
+
+Тип - A ("Adress" запрос IPv4-адреса)
+
+Класс запроса - IN ("Internet" класс для интернет-сетей)
+
+my.site: type A, class IN
+
+User Datagram Protocol, Src Port: 53, Dst Port: 57297
+Domain Name System (response)
+    Transaction ID: 0xb822
+    Flags: 0x8180 Standard query response, No error
+    Questions: 1
+    Answer RRs: 1
+    Authority RRs: 0
+    Additional RRs: 0
+    Queries
+        my.site: type A, class IN
+            Name: my.site
+            [Name Length: 7]
+            [Label Count: 2]
+            Type: A (1) (Host Address)
+            Class: IN (0x0001)
+    Answers
+    [Request In: 6]
+    [Time: 0.009752000 seconds]
+

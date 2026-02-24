@@ -1,0 +1,56 @@
+Dec 16 16:53:09.282 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Dec 16 16:53:09.282 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 54829.
+Dec 16 16:53:09.289 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 16 16:53:09.289 HYPERVISOR: exec_cmd: hypervisor working_dir /home/shadrict/GNS3/projects/CBS2p5/project-files/dynamips 
+Dec 16 16:53:09.289 GENERAL: working_dir=/home/shadrict/GNS3/projects/CBS2p5/project-files/dynamips
+Dec 16 16:53:09.289 HYPERVISOR: exec_cmd: hypervisor working_dir /home/shadrict/GNS3/projects/CBS2p5/project-files/dynamips/6d08f176-85e8-4510-9fd2-12fc8e8813dc 
+Dec 16 16:53:09.289 GENERAL: working_dir=/home/shadrict/GNS3/projects/CBS2p5/project-files/dynamips/6d08f176-85e8-4510-9fd2-12fc8e8813dc
+Dec 16 16:53:09.290 HYPERVISOR: exec_cmd: vm create R2 2 c3745 
+Dec 16 16:53:09.290 VM: VM R2 created.
+Dec 16 16:53:09.290 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 5001 
+Dec 16 16:53:09.290 HYPERVISOR: exec_cmd: c3745 get_mac_addr R2 
+Dec 16 16:53:09.291 HYPERVISOR: exec_cmd: vm set_ios R2 /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 16 16:53:09.291 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 16 16:53:09.291 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x60aa72bc 
+Dec 16 16:53:09.291 HYPERVISOR: exec_cmd: vm set_ram R2 256 
+Dec 16 16:53:09.292 HYPERVISOR: exec_cmd: vm set_nvram R2 256 
+Dec 16 16:53:09.292 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Dec 16 16:53:09.292 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 16 16:53:09.292 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 NM-1FE-TX 
+Dec 16 16:53:09.293 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 16 16:53:09.293 HYPERVISOR: exec_cmd: vm slot_add_binding R2 2 0 NM-4T 
+Dec 16 16:53:09.293 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 16 16:53:09.293 HYPERVISOR: exec_cmd: vm slot_add_binding R2 3 0 NM-16ESW 
+Dec 16 16:53:09.294 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 16 16:53:09.294 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 16 WIC-1T 
+Dec 16 16:53:09.294 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 16 16:53:09.294 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 32 WIC-2T 
+Dec 16 16:53:09.381 HYPERVISOR: exec_cmd: vm set_ios R2 /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 16 16:53:14.694 HYPERVISOR: exec_cmd: vm set_ios R2 /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 16 16:53:14.797 HYPERVISOR: exec_cmd: vm set_ios R2 /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 16 16:53:14.870 HYPERVISOR: exec_cmd: vm set_ios R2 /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 16 16:53:24.378 HYPERVISOR: exec_cmd: nio create_udp udp-8653145c-c4d0-4b8b-bcc7-7a8d0e63c732 10004 127.0.0.1 10005 
+Dec 16 16:53:24.589 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-8653145c-c4d0-4b8b-bcc7-7a8d0e63c732 
+Dec 16 16:53:24.589 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 16 16:53:41.894 HYPERVISOR: exec_cmd: vm create Ghost 0 c3745 
+Dec 16 16:53:41.894 VM: VM Ghost created.
+Dec 16 16:53:41.894 HYPERVISOR: exec_cmd: vm set_ios Ghost /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 16 16:53:41.895 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Dec 16 16:53:41.896 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost /home/shadrict/GNS3/projects/CBS2p5/project-files/dynamips/c3745-adventerprisek9-mz.124-25.image-256.ghost 
+Dec 16 16:53:41.896 HYPERVISOR: exec_cmd: vm set_ram Ghost 256 
+Dec 16 16:53:41.897 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 16 16:53:41.897 HYPERVISOR: exec_cmd: vm set_config Ghost configs/i0_startup-config.cfg 
+Dec 16 16:53:41.897 HYPERVISOR: exec_cmd: vm start Ghost 
+Dec 16 16:53:42.245 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 16 16:53:42.246 HYPERVISOR: exec_cmd: vm stop Ghost 
+Dec 16 16:53:42.349 VM: VM Ghost shutdown.
+Dec 16 16:53:42.350 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Dec 16 16:53:42.351 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Dec 16 16:53:42.351 VM: VM Ghost destroyed.
+Dec 16 16:53:42.353 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Dec 16 16:53:42.353 HYPERVISOR: exec_cmd: vm set_ghost_file R2 /home/shadrict/GNS3/projects/CBS2p5/project-files/dynamips/c3745-adventerprisek9-mz.124-25.image-256.ghost 
+Dec 16 16:53:42.353 HYPERVISOR: exec_cmd: vm get_status R2 
+Dec 16 16:53:42.354 HYPERVISOR: exec_cmd: vm set_config R2 configs/i2_startup-config.cfg 
+Dec 16 16:53:42.355 HYPERVISOR: exec_cmd: vm start R2 
+Dec 16 17:17:42.800 HYPERVISOR: exec_cmd: vm extract_config R2 
+Dec 16 17:17:42.805 HYPERVISOR: exec_cmd: vm extract_config R2 

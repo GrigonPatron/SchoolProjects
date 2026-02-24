@@ -1,0 +1,15 @@
+FROM nginx:stable
+
+# Устанавливаем компилятор и зависимости
+RUN apt-get update && \
+    apt-get install -y gcc spawn-fcgi libfcgi-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY miniserver.c .
+RUN gcc -o miniserver miniserver.c -lfcgi
+
+COPY run.sh .
+RUN chmod +x run.sh
+
+ENTRYPOINT ["./run.sh"]

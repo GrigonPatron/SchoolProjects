@@ -1,0 +1,7 @@
+FROM nginx
+WORKDIR /home/
+COPY ./nginxpart3.conf /etc/nginx/nginx.conf
+COPY ./miniserver.c .
+COPY ./run.sh .
+RUN apt-get update && apt-get install -y gcc spawn-fcgi libfcgi-dev
+ENTRYPOINT [ "sh", "./run.sh" ]

@@ -1,0 +1,96 @@
+# Basic CI/CD
+
+Development of a simple **CI/CD** for the C project. Building, testing, deployment.
+
+**== Task ==**
+
+##### Start *Ubuntu Server 22.04 LTS* virtual machine.
+*Be prepared to save a dump of the virtual machine image at the end of the project.*
+
+##### Download and install **gitlab-runner** on the virtual machine.
+
+##### Run **gitlab-runner** and register it for use in the current project (*DO6_CICD*).
+- You will need a URL and a token for runner registration, that can be obtained from the task page on the platform.
+
+### Part 2. Building
+
+**== Task ==**
+
+Write a stage for **CI** to build applications from the *SimpleBashUtils* project.
+
+n the _.gitlab-ci.yml_ file, add a stage to start the building via makefile from the _SimpleBashUtils_ project.
+
+Save post-build files (artifacts) to a random directory with a 30-day retention period.
+
+**== If the project *SimpleBashUtils* is not fulfilled  ==**
+
+
+Write a stage for **CI** to build *DO* application from the code-samples folder.
+
+In the _.gitlab-ci.yml_ file, add a stage to start the building via makefile from the code-samples folder.
+
+Save post-build files (artifacts) to a random directory with a 30-day retention period.
+
+
+### Part 3. Codestyle test
+
+**== Task ==**
+
+#### Write a stage for **CI** that runs a codestyle script (*clang-format*).
+
+##### If the codefile didn't pass, "fail" the pipeline.
+
+##### In the pipeline, display the output of the *clang-format* utility.
+
+### Part 4. Integration tests
+
+
+**== Task ==**
+
+#### Write a stage for **CI** that runs integration tests.
+
+##### For the *SimpleBashUtils* project, you can take your already written integration tests.
+
+##### For the project from the code-samples folder, write integration tests yourself. The tests can be written in any language (c, bash, python, etc.) and should call the built application to check its validity on different cases.
+
+##### Run this stage automatically only if the build and codestyle test passes successfully.
+
+##### If tests didn't pass, "fail" the pipeline.
+
+##### In the pipeline, display the output of the succeeded / failed integration tests.
+
+### Part 5. Deployment stage
+
+"To complete this task, you must move the executable files to another virtual machine, which will play the role of a production. Good luck."
+
+**== Task ==**
+
+##### Start the second virtual machine *Ubuntu Server 22.04 LTS*.
+
+#### Write a stage for **CD** that "deploys" the project on another virtual machine.
+
+##### Run this stage manually, if all the previous stages have passed successfully.
+
+##### Write a bash script which copies the files received after the building (artifacts) into the */usr/local/bin* directory of the second virtual machine using **ssh** and **scp**.
+
+- Be prepared to explain from the script how the relocation occurs.
+
+##### In the _.gitlab-ci.yml_ file, add a stage to run the script you have written.
+
+##### In case of an error, fail the pipeline.
+
+As a result, you should get a ready-to-use application from the *SimpleBashUtils* project (*cat* and *grep*) or an application from the code-samples folder (*DO*) on the second virtual machine (depending on what you did).
+
+##### Save dumps of virtual machine images.
+**P.S. Do not upload dumps to git under any circumstances!**
+- Don't forget to run the pipeline with the last commit in the repository.
+
+### Part 6. Bonus. Notifications
+
+"It says that your next task is for Nobel laureates specially. It does not say what they won the prize for, but certainly not for their ability to work with **gitlab-runner**."
+
+**== Task ==**
+
+#### Set up notifications of successful/unsuccessful pipeline execution via bot named "[your nickname] DO6 CI/CD" in *Telegram*.
+- The text of the notification must contain information on the successful passing of both **CI** and **CD** stages.
+- The rest of the notification text may be arbitrary.

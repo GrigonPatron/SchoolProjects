@@ -1,0 +1,31 @@
+Dec 15 19:03:32.343 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Dec 15 19:03:32.344 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 38655.
+Dec 15 19:03:32.351 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 15 19:03:32.351 HYPERVISOR: exec_cmd: hypervisor working_dir /home/shadrict/GNS3/projects/CBS2p1/project-files/dynamips 
+Dec 15 19:03:32.351 GENERAL: working_dir=/home/shadrict/GNS3/projects/CBS2p1/project-files/dynamips
+Dec 15 19:03:32.352 HYPERVISOR: exec_cmd: hypervisor working_dir /home/shadrict/GNS3/projects/CBS2p1/project-files/dynamips/7fbb2572-4e86-476e-b247-b269ea93ba7f 
+Dec 15 19:03:32.352 GENERAL: working_dir=/home/shadrict/GNS3/projects/CBS2p1/project-files/dynamips/7fbb2572-4e86-476e-b247-b269ea93ba7f
+Dec 15 19:03:32.352 HYPERVISOR: exec_cmd: vm create R1 1 c3745 
+Dec 15 19:03:32.352 VM: VM R1 created.
+Dec 15 19:03:32.352 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5000 
+Dec 15 19:03:32.353 HYPERVISOR: exec_cmd: c3745 get_mac_addr R1 
+Dec 15 19:03:32.353 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Dec 15 19:03:32.353 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 15 19:03:32.354 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x60aa72bc 
+Dec 15 19:03:32.354 HYPERVISOR: exec_cmd: vm set_ios R1 /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 15 19:03:32.355 HYPERVISOR: exec_cmd: c3745 set_mac_addr R1 c401.14d3.0000 
+Dec 15 19:03:32.355 HYPERVISOR: exec_cmd: vm set_nvram R1 256 
+Dec 15 19:03:32.355 HYPERVISOR: exec_cmd: vm set_ram R1 256 
+Dec 15 19:03:32.356 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 15 19:03:32.356 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 NM-1FE-TX 
+Dec 15 19:03:32.356 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 15 19:03:32.357 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 NM-4T 
+Dec 15 19:03:32.357 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 15 19:03:32.357 HYPERVISOR: exec_cmd: vm slot_add_binding R1 3 0 NM-16ESW 
+Dec 15 19:03:32.358 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 15 19:03:32.358 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 16 WIC-1T 
+Dec 15 19:03:32.358 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 15 19:03:32.359 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 32 WIC-2T 
+Dec 15 19:03:32.523 HYPERVISOR: exec_cmd: nio create_udp udp-add7f991-534d-43e5-8d38-9910021b3334 10002 127.0.0.1 10003 
+Dec 15 19:03:32.734 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 0 udp-add7f991-534d-43e5-8d38-9910021b3334 
+Dec 15 19:03:32.734 HYPERVISOR: exec_cmd: vm get_status R1 

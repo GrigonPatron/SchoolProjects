@@ -1,0 +1,100 @@
+stages:
+  - build
+  - style_test
+  - tests
+  - deploy
+  - telegram
+
+build-job:
+  stage: build
+  script:
+    - cd src/src/cat && make
+    - cd ../grep && make
+  after_script:
+    - echo "BUILD_STATUS=$CI_JOB_STATUS" > build.env
+  artifacts:
+    paths:
+      - src/src/cat/s21_cat
+      - src/src/grep/s21_grep
+    expire_in: 30 days
+    reports:
+      dotenv: build.env
+  tags:
+    - test
+    - aboba
+    - my-runner-tag
+
+style-test-job:
+  stage: style_test
+  script:
+    - cp materials/linters/.clang-format src/src/cat/
+    - cp materials/linters/.clang-format src/src/grep/
+    - cd src/src
+    - clang-format -Werror -n $(find . -name '*.c' -o -name '*.h')
+  after_script:
+    - echo "STYLE_STATUS=$CI_JOB_STATUS" > style.env
+  artifacts:
+    reports:
+      dotenv: style.env
+  tags:
+    - test
+    - aboba
+    - my-runner-tag
+  needs:
+    - build-job
+
+test_integration:
+  stage: tests
+  script:
+    - cd src/src/cat && chmod +x test_cat.sh && ./test_cat.sh || true
+    - cd ../grep && chmod +x test_grep.sh && ./test_grep.sh || true
+  after_script:
+    - echo "TESTS_STATUS=$CI_JOB_STATUS" > tests.env
+  artifacts:
+    reports:
+      dotenv: tests.env
+  tags:
+    - test
+    - aboba
+    - my-runner-tag
+  needs:
+    - build-job
+    - style-test-job
+
+deploy-job:
+  stage: deploy
+  script:
+    - chmod +x src/sentodeploy.sh
+    - src/sentodeploy.sh
+  after_script:
+    - echo "DEPLOY_STATUS=$CI_JOB_STATUS" > deploy.env
+  artifacts:
+    reports:
+      dotenv: deploy.env
+  tags:
+    - test
+    - aboba
+    - my-runner-tag
+  needs:
+    - build-job
+    - style-test-job
+    - test_integration
+
+notify-telegram:
+  stage: telegram
+  needs:
+    - job: build-job
+      artifacts: true
+    - job: style-test-job
+      artifacts: true
+    - job: test_integration
+      artifacts: true
+    - job: deploy-job
+      artifacts: true
+  when: always
+  script:
+    - bash src/telegram.sh
+  tags:
+    - test
+    - aboba
+    - my-runner-tag

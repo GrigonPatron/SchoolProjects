@@ -1,0 +1,45 @@
+Dec 16 16:03:06.667 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Dec 16 16:03:06.667 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 42685.
+Dec 16 16:03:06.671 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 16 16:03:06.672 HYPERVISOR: exec_cmd: hypervisor working_dir /home/shadrict/GNS3/projects/CBS2p3/project-files/dynamips 
+Dec 16 16:03:06.672 GENERAL: working_dir=/home/shadrict/GNS3/projects/CBS2p3/project-files/dynamips
+Dec 16 16:03:06.672 HYPERVISOR: exec_cmd: hypervisor working_dir /home/shadrict/GNS3/projects/CBS2p3/project-files/dynamips/09183f31-e6b9-4a99-93bd-270e6d3d845e 
+Dec 16 16:03:06.672 GENERAL: working_dir=/home/shadrict/GNS3/projects/CBS2p3/project-files/dynamips/09183f31-e6b9-4a99-93bd-270e6d3d845e
+Dec 16 16:03:06.673 HYPERVISOR: exec_cmd: vm create R1 1 c3745 
+Dec 16 16:03:06.673 VM: VM R1 created.
+Dec 16 16:03:06.673 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5000 
+Dec 16 16:03:06.674 HYPERVISOR: exec_cmd: c3745 get_mac_addr R1 
+Dec 16 16:03:06.674 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Dec 16 16:03:06.675 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:03:06.675 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x60aa72bc 
+Dec 16 16:03:06.676 HYPERVISOR: exec_cmd: vm set_ios R1 /home/shadrict/GNS3/images/IOS/c3745-adventerprisek9-mz.124-25.image 
+Dec 16 16:03:06.677 HYPERVISOR: exec_cmd: c3745 set_mac_addr R1 c401.1f59.0000 
+Dec 16 16:03:06.678 HYPERVISOR: exec_cmd: vm set_nvram R1 256 
+Dec 16 16:03:06.678 HYPERVISOR: exec_cmd: vm set_ram R1 256 
+Dec 16 16:03:06.679 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:03:06.679 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 NM-1FE-TX 
+Dec 16 16:03:06.680 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:03:06.680 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 NM-4T 
+Dec 16 16:03:06.681 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:03:06.682 HYPERVISOR: exec_cmd: vm slot_add_binding R1 3 0 NM-16ESW 
+Dec 16 16:03:06.682 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:03:06.683 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 16 WIC-1T 
+Dec 16 16:03:06.684 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:03:06.684 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 32 WIC-2T 
+Dec 16 16:03:06.810 HYPERVISOR: exec_cmd: nio create_udp udp-021a4800-dfac-4750-b4a4-1e47396fbb0a 10002 127.0.0.1 10003 
+Dec 16 16:03:07.021 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 0 udp-021a4800-dfac-4750-b4a4-1e47396fbb0a 
+Dec 16 16:03:07.022 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:03:27.583 HYPERVISOR: exec_cmd: vm set_ghost_status R1 2 
+Dec 16 16:03:27.585 HYPERVISOR: exec_cmd: vm set_ghost_file R1 /home/shadrict/GNS3/projects/CBS2p3/project-files/dynamips/c3745-adventerprisek9-mz.124-25.image-256.ghost 
+Dec 16 16:03:27.585 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:03:27.586 HYPERVISOR: exec_cmd: vm set_config R1 configs/i1_startup-config.cfg 
+Dec 16 16:03:27.586 HYPERVISOR: exec_cmd: vm start R1 
+Dec 16 16:05:30.084 HYPERVISOR: exec_cmd: nio create_udp udp-3e252c2c-1b01-43f9-8ef0-202800558ad0 10008 127.0.0.1 10009 
+Dec 16 16:05:30.086 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 1 udp-3e252c2c-1b01-43f9-8ef0-202800558ad0 
+Dec 16 16:05:30.087 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 16 16:05:30.087 HYPERVISOR: exec_cmd: vm slot_enable_nio R1 0 1 
+Dec 16 16:17:42.652 HYPERVISOR: exec_cmd: nio bind_filter udp-3e252c2c-1b01-43f9-8ef0-202800558ad0 2 capture 
+Dec 16 16:17:42.652 HYPERVISOR: exec_cmd: nio setup_filter udp-3e252c2c-1b01-43f9-8ef0-202800558ad0 2 en10mb /home/shadrict/GNS3/projects/CBS2p3/project-files/captures/R1_FastEthernet01_to_PC1_Ethernet0.pcap 
+Dec 16 16:31:28.040 HYPERVISOR: exec_cmd: vm extract_config R1 
+Dec 16 16:31:28.045 HYPERVISOR: exec_cmd: vm extract_config R1 
+Dec 16 16:32:27.496 HYPERVISOR: exec_cmd: nio unbind_filter udp-3e252c2c-1b01-43f9-8ef0-202800558ad0 2 
